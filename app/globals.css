@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-clinical-50: #f0f7ff;
+  --color-clinical-100: #e0effe;
+  --color-clinical-200: #bae0fd;
+  --color-clinical-300: #7cc7fc;
+  --color-clinical-400: #38abf9;
+  --color-clinical-500: #0e8fe9;
+  --color-clinical-600: #0271c7;
+  --color-clinical-700: #035aa1;
+  --color-clinical-800: #074c85;
+  --color-clinical-900: #0c406e;
+  --color-clinical-950: #082849;
+
+  --color-teal-brand-50: #f0fdfa;
+  --color-teal-brand-500: #14b8a6;
+  --color-teal-brand-600: #0d9488;
+  --color-teal-brand-700: #0f766e;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base custom styles for interactive experience */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+  }
+}
+
+/* Smooth fade-in animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark-glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
