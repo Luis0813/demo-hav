@@ -89,7 +89,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
                 <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
                   <Image
-                    src="/hospital_hero.png"
+                    src="/hospital-hav.jpeg"
                     alt="Hospital Adventista de Venezuela"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"

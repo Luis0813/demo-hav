@@ -159,9 +159,15 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-100 bg-white px-4 pt-2 pb-4 space-y-1 shadow-inner">
+      {/* Mobile menu with slide-down and fade-in animation */}
+      <div
+        className={`md:hidden border-t border-slate-100 bg-white overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileMenuOpen
+            ? "max-h-96 opacity-100 py-3 px-4 shadow-inner"
+            : "max-h-0 opacity-0 py-0 px-4 border-t-0 pointer-events-none"
+        }`}
+      >
+        <div className="space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -194,7 +200,7 @@ export function Navbar() {
             </Link>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
